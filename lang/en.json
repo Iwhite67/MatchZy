@@ -45,6 +45,7 @@
   "matchzy.cc.wl": "Whitelist is now {0}!",
   "matchzy.cc.playout": "Playout is now {0}!",
   "matchzy.cc.rcon": "Command sent successfully!",
+  "matchzy.cc.pickup": "Teams have been scrambled!",
   "matchzy.cc.exitprac": "MatchZy is already in match mode!",
   "matchzy.cc.match": "MatchZy is already in match mode!",
   "matchzy.cc.startisprac": "Cannot start a match while in practice mode. Please use .exitprac command to exit practice mode first!",

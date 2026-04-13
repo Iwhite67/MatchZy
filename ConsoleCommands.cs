@@ -506,6 +506,20 @@ namespace MatchZy
             }
         }
 
+        [ConsoleCommand("css_pickup", "Scrambles teams using mp_scrambleteams")]
+        public void OnPickupCommand(CCSPlayerController? player, CommandInfo? command)
+        {
+            if (IsPlayerAdmin(player, "css_pickup", "@css/config"))
+            {
+                Server.ExecuteCommand("mp_scrambleteams");
+                ReplyToUserCommand(player, Localizer["matchzy.cc.pickup"]);
+            }
+            else
+            {
+                SendPlayerNotAdminMessage(player);
+            }
+        }
+
         [ConsoleCommand("css_map", "Changes the map using changelevel")]
         public void OnChangeMapCommand(CCSPlayerController? player, CommandInfo command)
         {
