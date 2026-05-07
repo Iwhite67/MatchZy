@@ -20,7 +20,7 @@ public partial class MatchZy
 
         (int ctCount, _) = GetTeamPlayerCount((int)CsTeam.CounterTerrorist, false);
         (int tCount, _) = GetTeamPlayerCount((int)CsTeam.Terrorist, false);
-        int required = matchConfig.PlayersPerTeam;
+        int required = autoStartOnFullTeamsPlayersPerTeam.Value > 0 ? autoStartOnFullTeamsPlayersPerTeam.Value : matchConfig.PlayersPerTeam;
 
         bool teamsFull = ctCount >= required && tCount >= required;
 
