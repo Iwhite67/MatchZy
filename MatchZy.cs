@@ -250,6 +250,14 @@ namespace MatchZy
                 return HookResult.Continue;
             });
 
+            RegisterEventHandler<EventPlayerTeam>((@event, info) =>
+            {
+                CCSPlayerController? player = @event.Userid;
+                if (player == null || player.IsBot || player.IsHLTV) return HookResult.Continue;
+                AddTimer(0.1f, CheckAutoStartOnFullTeams);
+                return HookResult.Continue;
+            });
+
             AddCommandListener("jointeam", (player, info) =>
             {
                 if ((isMatchSetup || isVeto) && player != null && player.IsValid) {
